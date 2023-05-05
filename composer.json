@@ -14,10 +14,10 @@
     ],
     "require": {
         "php": ">=5.6",
-        "doctrine/lexer": "1.*"
+        "doctrine/lexer": "1.0.2"
     },
     "require-dev": {
-        "doctrine/cache": "1.*",
+        "doctrine/cache": "1.6.2*",
         "phpunit/phpunit": "^5.6.1"
     },
     "autoload": {
