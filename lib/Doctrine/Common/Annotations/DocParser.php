@@ -958,7 +958,7 @@ final class DocParser
         }
 
         // checks if identifier ends with ::class, \strlen('::class') === 7
-        $classPos = stripos($identifier, '::class');
+        $classPos = stripos((string) $identifier, '::class');
         if ($classPos === strlen($identifier) - 7) {
             return substr($identifier, 0, $classPos);
         }
@@ -1174,7 +1174,7 @@ final class DocParser
         foreach (array_keys($this->ignoredAnnotationNamespaces) as $ignoredAnnotationNamespace) {
             $ignoredAnnotationNamespace = rtrim($ignoredAnnotationNamespace, '\\') . '\\';
 
-            if (0 === stripos(rtrim($name, '\\') . '\\', $ignoredAnnotationNamespace)) {
+            if (0 === stripos((string) rtrim($name, '\\') . '\\', $ignoredAnnotationNamespace)) {
                 return true;
             }
         }

@@ -125,7 +125,7 @@ final class DocLexer extends AbstractLexer
 
         // Checking numeric value
         if (is_numeric($value)) {
-            return (strpos($value, '.') !== false || stripos($value, 'e') !== false)
+            return (strpos($value, '.') !== false || stripos((string) $value, 'e') !== false)
                 ? self::T_FLOAT : self::T_INTEGER;
         }
 
